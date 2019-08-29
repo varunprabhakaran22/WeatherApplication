@@ -1,0 +1,55 @@
+<!DOCTYPE html5>
+<html>
+<head>
+    <title> WeatherApp</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="container flex alignCenter">
+            <div class="flex1 ">
+                <div class="appName">
+                    <h1 class="">Weather <span> app </span></h1>                
+                </div>
+            </div>
+            <div class="flex1">
+                <div class="weatherSec">
+                    <h3 class="city">Bangalore</h3>, <h3 class="state">Karnataka</h3>
+                    <div class="DateTime">
+                        <span class="dtDay">Friday</span>
+                        <span class="dtTime">8:00 am</span>
+                    </div>
+                    <div class="weather">Partly Cloud</div>
+                    <div class="degreeSec">
+                        <div class="dsDegree">26</div>
+                        <div class="convCelsius" onclick="convertDegree('c')">&deg;C</div>
+                        <span>|</span>
+                        <div class="convFaranheit" onclick="convertDegree('f')">F</div>
+                    </div>
+                    <p>Enter City Name</p>
+                    <div>
+                        <input id="cityName" type="text" name="city" placeholder="City name" list="citylist">
+                        <datalist id="citylist"> 
+                            <option value="Noida"></option> 
+                            <option value="Bangalore"></option> 
+                            <option value="Chennai"></option> 
+                            <option value="Coimbatore"></option> 
+                            <option value="Jaipur"></option> 
+                            <option value="Mysore"></option> 
+                            <option value="Allepey"></option> 
+                            <option value="Mumbai"></option> 
+                            <option value="Panaji"></option> 
+                            <option value="Amaravati"></option> 
+                            <option value="Gurugram"></option> 
+                            <option value="Patna"></option> 
+                            <option value="Madurai"></option>
+                        </datalist>
+                        <button onclick="updateWeather()">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
