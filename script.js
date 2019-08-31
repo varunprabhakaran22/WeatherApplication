@@ -4,7 +4,7 @@ const cityList = [
     { name: "Chennai", state: "Tamil nadu",climate:"Hot", degree: 28},
     { name: "Bangalore", state:"Karnataka",climate:"cloudy", degree: 22},
     { name: "Hyderabad", state: "Telengana",climate:"clear", degree: 25},
-    { name: "Thiruvanandhapuram", state: "Kerala",climate:"Rainy", degree: 18},
+    { name: "Thiruvananthaapuram", state: "Kerala",climate:"Rainy", degree: 18},
     { name: "Panaji", state: "Goa ",climate:"Rainy", degree: 20},
     { name: "New Delhi", state: "Delhi",climate:"Hot", degree: 30},
     { name: "kolkata", state: "West Bengal",climate:"Cloudy", degree: 22},
