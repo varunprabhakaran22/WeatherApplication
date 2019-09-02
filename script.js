@@ -114,15 +114,49 @@ const cityList = [
 
 // to function is used to check the used input along with the arraylist and return the needed information to the html file 
  
-let currentCity=document.getElementById("updateWeather").addEventListener("click", function(){
-        let city=new weather(currentCity);
+let cityValue=document.getElementsByClassName("updateWeather")[0].addEventListener("click", function(){
 
-  });
+        //getting the user input using the eventlistener
+        let cityInput =document.getElementById("cityName").value;
+        // passing the value as a parameter to class constructor
+        let func=new weather(cityInput);
+        console.log(cityInput)
+
+});
+
+// event listener used to convert degree values
+let degCelsius=document.getElementsByClassName("convCelsius")[0].addEventListener("click", function(){
+
+    //getting the user input using the eventlistener
+    let degreeInput = document.getElementsByClassName("dsDegree")[0].innerHTML;
+    
+    // passing the value as a parameter to class constructor
+    let func=new degreeConversionCelsius(degreeInput);
+
+});
+
+
+// event listener used to convert degree values
+let degFahranheit=document.getElementsByClassName("convFahranheit")[0].addEventListener("click", function(){
+
+    //getting the user input using the eventlistener
+    let degreeInput = document.getElementsByClassName("dsDegree")[0].innerHTML;
+    
+    // passing the value as a parameter to class constructor
+    let func=new degreeConversionFahranheit(degreeInput);
+
+});
+
+
 
 class weather{
+    
+    
     constructor(city){
+        
         this.city=city;
-        let op=cityList.filter(city => { 
+        console.log(this.city)
+        cityList.forEach(city => { 
             if(city.name ==this.city) {
                 document.getElementsByClassName("city")[0].innerHTML= city.name;
                 document.getElementsByClassName("state")[0].innerHTML= city.state;
@@ -130,12 +164,36 @@ class weather{
                 document.getElementsByClassName("dsDegree")[0].innerHTML= city.degree;
 
             }
-        });
+        }); 
+        
+    }
+}
+
+
+class degreeConversionCelsius{
+    constructor(degreeInput){
+        this.degreeInput=degreeInput
+        
+        this.degreeInput =Math.round( (this.degreeInput - 32) * 0.5556);
+        
+        document.getElementsByClassName("dsDegree")[0].innerHTML=this.degreeInput; 
+
+
+    }
+
+    
+}
+
+class degreeConversionFahranheit{
+    constructor(degreeInput){
+        this.degreeInput=degreeInput
+        this.degreeInput =Math.round((this.degreeInput* 1.8) + 32);
+        console.log(this.degreeInput)
+        document.getElementsByClassName("dsDegree")[0].innerHTML=this.degreeInput; 
 
 
     }
 }
-
 
 
 
@@ -155,40 +213,43 @@ class weather{
 
 // function to convert values from celsius to fahrenheit based on the formula
 //  and those values are sended back to the html file
-let CELSIUS = true;
-let FAHRENHEIT = false;
-function convertToFahrenheit(x){
-    let degree = '';
-    let cDegree = document.getElementsByClassName("dsDegree")[0].innerHTML;
-    console.log(cDegree);
-    console.log(x);
-        if(!CELSIUS) {
-            CELSIUS = true;
-            FAHRENHEIT = false;
-            degree =Math.round( (cDegree - 32) * 0.5556);
-            console.log(degree);
-            document.getElementsByClassName("dsDegree")[0].innerHTML=degree;
+
+// let CELSIUS = true;
+// let FAHRENHEIT = false;
+// function convertToFahrenheit(x){
+//     let degree = '';
+//     let cDegree = document.getElementsByClassName("dsDegree")[0].innerHTML;
+//     console.log(cDegree);
+//     console.log(x);
+//         if(!CELSIUS) {
+//             CELSIUS = true;
+//             FAHRENHEIT = false;
+//             degree =Math.round( (cDegree - 32) * 0.5556);
+//             console.log(degree);
+//             document.getElementsByClassName("dsDegree")[0].innerHTML=degree;
             
-        }
-}
+//         }
+// }
 
-// function to convert values from fahrenheit to celsius based on the formula
-//  and those values are sended back to the html file
+// // function to convert values from fahrenheit to celsius based on the formula
+// //  and those values are sended back to the html file
 
-function convertToCelsius(x){
-    let degree = '';
-    let cDegree = document.getElementsByClassName("dsDegree")[0].innerHTML;
-    console.log(cDegree);
-    console.log(x);    
-        if(!FAHRENHEIT) {
-            CELSIUS = false;
-            FAHRENHEIT = true;
-            degree =Math.round((cDegree * 1.8) + 32);
-            console.log(degree);
-            document.getElementsByClassName("dsDegree")[0].innerHTML=degree;
-        }
+// function convertToCelsius(x){
+//     let degree = '';
+//     let cDegree = document.getElementsByClassName("dsDegree")[0].innerHTML;
+//     console.log(cDegree);
+//     console.log(x);    
+//         if(!FAHRENHEIT) {
+//             CELSIUS = false;
+//             FAHRENHEIT = true;
+//             degree =Math.round((cDegree * 1.8) + 32);
+//             console.log(degree);
+
+                //degree =Math.round((cDegree * 1.8) + 32);
+//             document.getElementsByClassName("dsDegree")[0].innerHTML=degree;
+//         }
     
-}
+// }
 
 // getting the date and time from the system 
 

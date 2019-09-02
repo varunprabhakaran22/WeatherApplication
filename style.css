@@ -18,4 +18,4 @@ button{size: 1px;}
 h3{display: inline-block;}
 .degreeSec{display: flex;}
 .degreeSec .dsDegree{font-size: 34px;margin-right: 5px;}
-.degreeSec .convCelsius, .degreeSec .convFaranheit{cursor: pointer;font-size: 14px; margin: 5px; margin-top: 3px;}
+.degreeSec .convCelsius, .degreeSec .convFahranheit{cursor: pointer;font-size: 14px; margin: 5px; margin-top: 3px;}
