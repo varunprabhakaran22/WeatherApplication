@@ -4,7 +4,7 @@ const cityList = [
     { name: "Chennai", state: "Tamil nadu",climate:"Hot", degree: 28},
     { name: "Bangalore", state:"Karnataka",climate:"cloudy", degree: 22},
     { name: "Hyderabad", state: "Telengana",climate:"clear", degree: 25},
-    { name: "Thiruvananthaapuram", state: "Kerala",climate:"Rainy", degree: 18},
+    { name: "Thiruvananthapuram", state: "Kerala",climate:"Rainy", degree: 18},
     { name: "Panaji", state: "Goa ",climate:"Rainy", degree: 20},
     { name: "New Delhi", state: "Delhi",climate:"Hot", degree: 30},
     { name: "kolkata", state: "West Bengal",climate:"Cloudy", degree: 22},
@@ -53,7 +53,6 @@ class weather{
     
     
     constructor(city){
-        
         this.city=city;
         console.log(this.city)
         cityList.forEach(city => { 
@@ -62,12 +61,14 @@ class weather{
                 document.getElementsByClassName("state")[0].innerHTML= city.state;
                 document.getElementsByClassName("weather")[0].innerHTML= city.climate;
                 document.getElementsByClassName("dsDegree")[0].innerHTML= city.degree;
+                    
 
             }
         }); 
         
     }
 }
+
 
 let celsius=true
 let fahrenheit=false
