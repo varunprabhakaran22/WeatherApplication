@@ -10,10 +10,11 @@ AUTHOR: VARUN -->
     <!-- linking the external stylesheet -->
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <!-- 
 Get the current date from the system when page get loaded  -->
-<body onload="getDay()">
+<body>
     <main>
         <!-- dividing the weather app into two section using flex -->
         <div class="container flex">
@@ -23,24 +24,30 @@ Get the current date from the system when page get loaded  -->
                 </div>
             </div>
             <div class="flex1">
-                <h3 class="city">Bangalore</h3>, <h3 class="state">Karnataka</h3>
                 <div class="DateTime">
                     <!--  date and day will be fetched from javascript when user loads the page -->
-                    <span class="dtDay">Friday</span> <span>,</span>
-                    <span class="dtTime">6.07 </span>:<span class="dtMinute">00</span>
+                    <h3 class="city">Bangalore</h3>, <h3 class="state"> Karnataka</h3>
+                    <br>
+                    <span class="dtDay">Friday</span><span>,</span>
+                    <span class="dtTime">6.07</span>:<span class="dtMinute">00</span><br>
+                    <span class="climate">Party cloudy</span>
+                </div>
+
+                <div class="degreeSec">
+                    <div class="dsDegree">26</div>
+                    <!-- calling the function to convert the value from celsius to fahrenheit  -->
+                    <div class="convCelsius">&deg;C</div>
+                    <span class="line">|</span>
+                    <!-- calling the function to convert the value from fahrenheit to celsius -->
+                    <div class="convFahranheit">F</div>
                 </div>
 
                 <div class="userArea">
-                    <input  class="inputBox" type="text" placeholder="Search.." name="cityName">
-                    <button class="searchButton"> search </button>
+                    <input id="inputBox"  class="inputBox" type="text" placeholder="Search.." name="cityName">
+                    <input type="button" class="searchButton" value="submit">
                 </div>
 
-
             </div>
-
-
-
-
         </div>
     </main>
 

@@ -1,3 +1,10 @@
+:root{
+    --primary-color:#000;
+    --secondary-color:#6b6666;
+    --primary-font:arial;
+    --secondary-font:
+}
+
 body{padding: 0;margin: 0;}
 .container{height:100vh;}
 .alignCenter{align-items:center;}
@@ -11,14 +18,14 @@ body{padding: 0;margin: 0;}
 .headingColor{color:white;}
 h1{font-size: 50px;}
 .title{font-size: 32px;color: black;margin: 20px;padding: 15px;}
-.title .dateAndTime{font-size: 20px;margin: 2px;padding: 2px;position: relative;}
+.title .dateAndTime{font-size: 20px;margin: 2px;padding: 15px;position: relative;}
 button{size: 1px;}
 .conversion{padding: 40px;}
 .weatherSec{padding: 40px;}
 h3{display: inline-block;}
 .degreeSec{display: flex;}
-.degreeSec .dsDegree{font-size: 34px;margin-right: 5px;}
-.degreeSec .convCelsius, .degreeSec .convFahranheit{cursor: pointer;font-size: 14px; margin: 5px; margin-top: 3px;}
+.degreeSec .dsDegree{margin-right: 5px;}
+.degreeSec .convCelsius, .degreeSec .convFahranheit{cursor: pointer;font-size: 20px; margin: 5px; margin-top: 20px;color:var(--secondary-color);}
 /* @media screen and (max-width: 800px) {
     input[type=text] {
       float: none;
@@ -43,10 +50,30 @@ h3{display: inline-block;}
 .searchButton{
     border-radius: 4px;
     width:8em;
-    height: 3.5em;
+    height: 3.4em;
     background: transparent;
 }
 
 .userArea{
-    padding: 20px;
+    padding: 15px;
+    padding-top: 15%;
+}
+
+.DateTime{
+    padding-left:15px;
+    padding-top: 15%;
+    color:var(--secondary-color);
+    font-family: var(--primary-font);
+    line-height: 1.4;
+}
+
+.dsDegree{
+    padding-left: 15px;
+    line-height: 2;
+    font-size: 3.5em;
+    color:var(--primary-color)
+}
+.line{
+    margin-top: 20px;
+    color:var(--secondary-color);
 }
