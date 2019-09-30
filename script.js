@@ -3,6 +3,9 @@ let countryName
 let jsonFile
 let celcius
 let climate
+let celsius=true
+let fahrenheit=false
+
 document.querySelector(".searchButton").addEventListener("click", function () {
     cityName = document.querySelector(".inputBox").value;
     $.ajax({
@@ -30,6 +33,47 @@ document.querySelector(".searchButton").addEventListener("click", function () {
     getDay();
 });
 
+
+// event listener used to convert degree values
+document.getElementsByClassName("convCelsius")[0].addEventListener("click", function(){
+    degreeInput = celcius
+    // passing the value as a parameter to class constructor
+    let func=new degreeConversionCelsius(degreeInput);
+});
+
+
+// event listener used to convert degree values
+document.getElementsByClassName("convFahranheit")[0].addEventListener("click", function(){
+    degreeInput = celcius
+    // passing the value as a parameter to class constructor
+    let func=new degreeConversionFahranheit(degreeInput);
+});
+
+class degreeConversionCelsius{
+    constructor(degreeInput){
+        this.degreeInput=degreeInput
+        if(!celsius){
+            document.getElementsByClassName("dsDegree")[0].innerHTML=celcius;
+            celsius=true
+            fahrenheit=false
+        }
+    }   
+}
+
+
+class degreeConversionFahranheit{
+    constructor(degreeInput){
+        this.degreeInput=degreeInput
+        if(!fahrenheit){
+                 this.degreeInput =Math.round((this.degreeInput* 1.8) + 32);
+                 fahrenheit=true
+                 celsius=false
+                 console.log(fahrenheit)
+                 document.getElementsByClassName("dsDegree")[0].innerHTML=this.degreeInput; 
+        }
+    }
+}
+
 function getDay(){
     let date=new Date()
     let dayValue=date.getDay();
@@ -39,26 +83,18 @@ function getDay(){
         minute='0'+minute;
     }
     var weekday = new Array(7);
-      weekday[0] = "Sunday";
-      weekday[1] = "Monday";
-      weekday[2] = "Tuesday";
-      weekday[3] = "Wednesday";
-      weekday[4] = "Thursday";
-      weekday[5] = "Friday";
-      weekday[6] = "Saturday";
-    
+    weekday[0] = "Sunday";
+    weekday[1] = "Monday";
+    weekday[2] = "Tuesday";
+    weekday[3] = "Wednesday";
+    weekday[4] = "Thursday";
+    weekday[5] = "Friday";
+    weekday[6] = "Saturday";    
     let day=weekday[dayValue]  
     document.getElementsByClassName("dtDay")[0].innerHTML=day
     document.getElementsByClassName("dtTime")[0].innerHTML=time;
     document.getElementsByClassName("dtMinute")[0].innerHTML=minute;
     
 }
-
-
-
-
-
-
-
 
 // API KEY 32c1955a9aeef50cf4669db5dd1cd839
