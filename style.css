@@ -56,7 +56,7 @@ h3{display: inline-block;}
 
 .userArea{
     padding: 15px;
-    padding-top: 15%;
+    padding-top: 10%;
 }
 
 .DateTime{
@@ -76,4 +76,24 @@ h3{display: inline-block;}
 .line{
     margin-top: 20px;
     color:var(--secondary-color);
+}
+
+@media screen and (max-width: 768px) {
+    .appName{height: auto;
+        display: block;
+        align-items: unset;
+        justify-content: unset;
+        text-align: center;
+    }
+    .flex{
+        display: block;
+    }
+    .container {
+        height: auto;
+    }
+    .inputBox{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
 }
