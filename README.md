@@ -1,3 +1,3 @@
-# weatherApp
-The objective of the app is to check the weather condition based on user input, based on user convenience user can change the degree value from celsius to fahrenheit.
+# Weather Application
 
+      The Weather application helps you to find any location's weather live at anytime. type to find the weather and it fetches data with openweatherapi. either it be any state or district and either you need it celsius or fahrenheit, The application produces accurate weather details for you
