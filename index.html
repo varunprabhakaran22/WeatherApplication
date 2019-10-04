@@ -24,28 +24,31 @@ Get the current date from the system when page get loaded  -->
                 </div>
             </div>
             <div class="flex1">
-                <div class="DateTime">
-                    <!--  date and day will be fetched from javascript when user loads the page -->
-                    <h3 class="city">Bangalore</h3>, <h3 class="state"> Karnataka</h3>
-                    <br>
-                    <span class="dtDay">Friday</span><span>,</span>
-                    <span class="dtTime">6.07</span>:<span class="dtMinute">00</span><br>
-                    <span class="climate">Party cloudy</span>
-                </div>
+                <div class="mainAlign">
+                    <div class="DateTime">
+                        <!--  date and day will be fetched from javascript when user loads the page -->
+                        <h3 class="city">Bangalore</h3>, <h3 class="state"> Karnataka</h3>
+                        <br>
+                        <span class="dtDay">Friday</span><span>,</span>
+                        <span class="dtTime">6.07</span>:<span class="dtMinute">00</span><br>
+                        <span class="climate">Party cloudy</span>
+                        <img id="icon" src="" alt="Weather icon">
+                    </div>
 
-                <div class="degreeSec">
-                    <div class="dsDegree">26</div>
-                    <!-- calling the function to convert the value from celsius to fahrenheit  -->
-                    <div class="convCelsius">&deg;C</div>
-                    <span class="line">|</span>
-                    <!-- calling the function to convert the value from fahrenheit to celsius -->
-                    <div class="convFahranheit">F</div>
+                    <div class="degreeSec">
+                        <div class="dsDegree">26</div>
+                        <!-- calling the function to convert the value from celsius to fahrenheit  -->
+                        <div class="convCelsius">&deg;C</div>
+                        <span class="line">|</span>
+                        <!-- calling the function to convert the value from fahrenheit to celsius -->
+                        <div class="convFahranheit">F</div>
+                    </div>
                 </div>
 
 
                 <div class="userArea">
                     <input id="inputBox"  class="inputBox" type="text" placeholder="Search.." name="cityName">
-                    <input type="button" class="searchButton" value="submit">
+                    <input type="button" class="searchButton" value="Search">
                 </div>
 
             </div>

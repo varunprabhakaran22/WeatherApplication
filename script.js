@@ -5,6 +5,7 @@ let celcius
 let climate
 let celsius=true
 let fahrenheit=false
+let icon
 
 document.querySelector(".searchButton").addEventListener("click", function () {
     cityName = document.querySelector(".inputBox").value;
@@ -23,8 +24,12 @@ document.querySelector(".searchButton").addEventListener("click", function () {
             document.getElementsByClassName("state")[0].innerHTML=countryName;
             climate=jsonFile['weather'][0]['description']
             document.getElementsByClassName("climate")[0].innerHTML=climate;
-            console.log(climate)
-            console.log('Success')
+
+            icon=jsonFile['weather'][0]['icon']
+            iconurl="http://openweathermap.org/img/w/"+ icon+".png";
+            console.log(iconurl)
+            document.getElementById('icon').src = iconurl;
+            
         },
         error: function(error){
             console.log(error);
@@ -32,8 +37,7 @@ document.querySelector(".searchButton").addEventListener("click", function () {
     });
     getDay();
 });
-
-
+  
 // event listener used to convert degree values
 document.getElementsByClassName("convCelsius")[0].addEventListener("click", function(){
     degreeInput = celcius
