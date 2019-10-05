@@ -7,16 +7,22 @@ let celsius=true
 let fahrenheit=false
 let icon
 
+
+// url: 'https://api.openweathermap.org/data/2.5/weather?q='+cityName+'&appid=32c1955a9aeef50cf4669db5dd1cd839&units=metric',
+       
+
 document.querySelector(".searchButton").addEventListener("click", function () {
     cityName = document.querySelector(".inputBox").value;
     $.ajax({
-        url: 'https://api.openweathermap.org/data/2.5/weather?q='+cityName+'&appid=32c1955a9aeef50cf4669db5dd1cd839&units=metric',
+        url: 'https://api.openweathermap.org/data/2.5/weather',
+        data: {q: cityName, appid: "32c1955a9aeef50cf4669db5dd1cd839", units : "metric"},
         dataType: "json",
         type: 'GET',
         success: function (data) {
             jsonFile=data
+            //calling the function
             passingValueToHtml(jsonFile)
-            // console.log(jsonFile);
+            diplayProgressScreen()
         },
         error: function(error){
             console.log(error);
@@ -24,9 +30,7 @@ document.querySelector(".searchButton").addEventListener("click", function () {
     });
 });
 
-function passingValueToHtml(jsonFile){
-    this.jsonFile=jsonFile
-    console.log(this.jsonFile);
+function passingValueToHtml(){
     celcius=Math.round(jsonFile.main.temp);
     document.getElementsByClassName("dsDegree")[0].innerHTML=celcius;
     cityName=jsonFile['name'];
@@ -37,23 +41,22 @@ function passingValueToHtml(jsonFile){
     document.getElementsByClassName("climate")[0].innerHTML=climate;
     icon=jsonFile['weather'][0]['icon']
     iconurl="http://openweathermap.org/img/w/"+ icon+".png";
-    console.log(iconurl)
     document.getElementById('icon').src = iconurl;    
     getDay();    
 }
 
+function diplayProgressScreen(){
+    $(document).ajaxStart(function(){
+        $('#loading').show();
+        $('#icon').show();
+        }).ajaxStop(function(){
+        $('#loading').hide();
+    });
+}
 
 
-$(document).ajaxStart(function(){
-    $('#loading').show();
-    $('#icon').show();
-    }).ajaxStop(function(){
-    $('#loading').hide();
-});
 
-
-
-  
+ 
 // event listener used to convert degree values
 document.getElementsByClassName("convCelsius")[0].addEventListener("click", function(){
     degreeInput = celcius
