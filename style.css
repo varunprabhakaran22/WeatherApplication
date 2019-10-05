@@ -2,7 +2,7 @@
     --primary-color:#000;
     --secondary-color:#6b6666;
     --primary-font:arial;
-    --secondary-font:
+    /* --secondary-font: */
 }
 
 body{
@@ -90,6 +90,7 @@ h3{
 
 .degreeSec{
     display: flex;
+    padding: 20px;
 }
 
 .degreeSec .dsDegree{
@@ -141,6 +142,16 @@ h3{
 .line{
     margin-top: 20px;
     color:var(--secondary-color);
+}
+
+#loading{
+    display: none;
+    width: 20px;
+    height: 20px;
+}
+
+#icon{
+    display: none;
 }
 
 @media screen and (max-width: 768px) {

@@ -24,7 +24,6 @@ document.querySelector(".searchButton").addEventListener("click", function () {
             document.getElementsByClassName("state")[0].innerHTML=countryName;
             climate=jsonFile['weather'][0]['description']
             document.getElementsByClassName("climate")[0].innerHTML=climate;
-
             icon=jsonFile['weather'][0]['icon']
             iconurl="http://openweathermap.org/img/w/"+ icon+".png";
             console.log(iconurl)
@@ -37,6 +36,17 @@ document.querySelector(".searchButton").addEventListener("click", function () {
     });
     getDay();
 });
+
+
+$(document).ajaxStart(function(){
+    $('#loading').show();
+    $('#icon').show();
+}).ajaxStop(function(){
+    $('#loading').hide();
+ });
+
+
+
   
 // event listener used to convert degree values
 document.getElementsByClassName("convCelsius")[0].addEventListener("click", function(){
