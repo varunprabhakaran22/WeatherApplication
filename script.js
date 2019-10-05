@@ -15,35 +15,41 @@ document.querySelector(".searchButton").addEventListener("click", function () {
         type: 'GET',
         success: function (data) {
             jsonFile=data
-            console.log(jsonFile);
-            celcius=Math.round(jsonFile.main.temp);
-            document.getElementsByClassName("dsDegree")[0].innerHTML=celcius;
-            cityName=jsonFile['name'];
-            document.getElementsByClassName("city")[0].innerHTML=cityName;
-            countryName=jsonFile.sys.country;
-            document.getElementsByClassName("state")[0].innerHTML=countryName;
-            climate=jsonFile['weather'][0]['description']
-            document.getElementsByClassName("climate")[0].innerHTML=climate;
-            icon=jsonFile['weather'][0]['icon']
-            iconurl="http://openweathermap.org/img/w/"+ icon+".png";
-            console.log(iconurl)
-            document.getElementById('icon').src = iconurl;
-            
+            passingValueToHtml(jsonFile)
+            // console.log(jsonFile);
         },
         error: function(error){
             console.log(error);
         }
     });
-    getDay();
 });
+
+function passingValueToHtml(jsonFile){
+    this.jsonFile=jsonFile
+    console.log(this.jsonFile);
+    celcius=Math.round(jsonFile.main.temp);
+    document.getElementsByClassName("dsDegree")[0].innerHTML=celcius;
+    cityName=jsonFile['name'];
+    document.getElementsByClassName("city")[0].innerHTML=cityName;
+    countryName=jsonFile.sys.country;
+    document.getElementsByClassName("state")[0].innerHTML=countryName;
+    climate=jsonFile['weather'][0]['description']
+    document.getElementsByClassName("climate")[0].innerHTML=climate;
+    icon=jsonFile['weather'][0]['icon']
+    iconurl="http://openweathermap.org/img/w/"+ icon+".png";
+    console.log(iconurl)
+    document.getElementById('icon').src = iconurl;    
+    getDay();    
+}
+
 
 
 $(document).ajaxStart(function(){
     $('#loading').show();
     $('#icon').show();
-}).ajaxStop(function(){
+    }).ajaxStop(function(){
     $('#loading').hide();
- });
+});
 
 
 
