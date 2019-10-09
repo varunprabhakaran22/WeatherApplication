@@ -20,6 +20,6 @@ calculations like Celsius and Fahrenheit. The app is programmed in such a way th
    
    # Author
    
-    [VARUN](https://github.com/varunprabhakaran22/)
+    [VARUN](https://github.com/varunprabhakaran22)
     
     
