@@ -20,5 +20,5 @@ calculations like Celsius and Fahrenheit. The app is programmed in such a way th
    
    # Author
     VARUN
-    ![Git](https://github.com/varunprabhakaran22)   
+    https://github.com/varunprabhakaran22   
     
