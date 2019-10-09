@@ -6,4 +6,6 @@ calculations like Celcius and Fahrenheit. The app is programmed in such a way th
 ## How to use 
    Step1: The home screen is explicit, in such a way that you type the place and the temperature is displayed for you. 
    ![HomePage](images/homepage.png)
-   
+ 
+   Step 2: Type the name of the state or city in the text box given below and click the search button
+   ![Result](images/result.png)
