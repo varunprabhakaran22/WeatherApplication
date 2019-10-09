@@ -5,5 +5,5 @@ calculations like Celcius and Fahrenheit. The app is programmed in such a way th
 # Getting Started
 ## How to use 
    Step1: The home screen is explicit, in such a way that you type the place and the temperature is displayed for you. 
-   ![HomePage](images/homepage.PNG)
+   ![HomePage](images/homepage.png)
    
