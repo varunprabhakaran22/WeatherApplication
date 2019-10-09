@@ -15,5 +15,9 @@ calculations like Celsius and Fahrenheit. The app is programmed in such a way th
    Step 3 : The temperature of the given city  will be displayed above the text box, which will be displayed in Celsius, 
    just click the F near to C and  get the temperature data in Fahrenheit 
    
-   ![Degree](images/ca.png)
+   ![Degree](images/fah.png)
    
+   
+   # Author
+    VARUN
+    https://github.com/varunprabhakaran22
