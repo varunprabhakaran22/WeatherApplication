@@ -23,8 +23,6 @@ function init(){
             type: 'GET',
             success: function (data) {
                 jsonFile=data
-                //calling the function
-                console.log(jsonFile)
                 passingValueToHtml(jsonFile)
                 diplayProgressScreen()
             },
@@ -34,6 +32,7 @@ function init(){
         });
     });
 }
+
 function passingValueToHtml(){
     celcius=Math.round(jsonFile.main.temp);
     document.getElementsByClassName("dsDegree")[0].innerHTML=celcius;
@@ -57,8 +56,6 @@ function diplayProgressScreen(){
         $('#loading').hide();
     });
 }
-
-
 
  
 // event listener used to convert degree values
@@ -109,14 +106,7 @@ function getDay(){
     if(minute<10){
         minute='0'+minute;
     }
-    var weekday = new Array(7);
-    weekday[0] = "Sunday";
-    weekday[1] = "Monday";
-    weekday[2] = "Tuesday";
-    weekday[3] = "Wednesday";
-    weekday[4] = "Thursday";
-    weekday[5] = "Friday";
-    weekday[6] = "Saturday";    
+    let weekday = ["Sunday", "Monday","Tuesday ","Wednesday","Thursday","Friday", "Saturday" ]   
     let day=weekday[dayValue]  
     document.getElementsByClassName("dtDay")[0].innerHTML=day
     document.getElementsByClassName("dtTime")[0].innerHTML=time;
