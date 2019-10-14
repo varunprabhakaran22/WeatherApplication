@@ -37,6 +37,9 @@ body{
     justify-content: center;
     background: #1890f0;
 }
+.tagline{
+    display: block;
+}
 
 .flex1 .appName span{
     color:whitesmoke;

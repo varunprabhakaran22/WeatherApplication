@@ -70,7 +70,6 @@ function degreeConversion(){
         conversion.conversionToCelsius();
     });
 
-
     // event listener used to convert degree values
     document.getElementsByClassName("convFahranheit")[0].addEventListener("click", function(){
         degreeInput = celcius
@@ -81,7 +80,6 @@ function degreeConversion(){
         conversion = new weather()
         conversion.conversionToFahranheit(degreeInput);
     });
-
 }
 
 class weather{
@@ -121,8 +119,7 @@ function getDay(){
     let day=weekday[dayValue]  
     document.getElementsByClassName("dtDay")[0].innerHTML=day
     document.getElementsByClassName("dtTime")[0].innerHTML=time;
-    document.getElementsByClassName("dtMinute")[0].innerHTML=minute;
-    
+    document.getElementsByClassName("dtMinute")[0].innerHTML=minute;  
 }
 
 // API KEY 32c1955a9aeef50cf4669db5dd1cd839
