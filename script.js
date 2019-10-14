@@ -71,34 +71,29 @@ document.getElementsByClassName("convCelsius")[0].addEventListener("click", func
 document.getElementsByClassName("convFahranheit")[0].addEventListener("click", function(){
     degreeInput = celcius
     // passing the value as a parameter to class constructor
-    let func=new degreeConversionFahranheit(degreeInput);
+    conversion = new weather()
+    conversion.conversionToFahranheit(degreeInput);
 });
 
 class weather{
     constructor(degreeInput){
         this.degreeInput = degreeInput
     }
-         conversionToCelsius(){
-            if(!celsius){
-                document.getElementsByClassName("dsDegree")[0].innerHTML=celcius;
-                celsius=true
-                fahrenheit=false
-            }
+    conversionToCelsius(){
+        if(!celsius){
+            document.getElementsByClassName("dsDegree")[0].innerHTML=celcius;
+            celsius=true
+            fahrenheit=false
         }
-}
-
-let  w= new weather()
-w.conversionToCelsius;
-
-class degreeConversionFahranheit{
-    constructor(degreeInput){
-        this.degreeInput=degreeInput
+    }
+    conversionToFahranheit(degreeInput){
+        this.degreeInput = degreeInput
         if(!fahrenheit){
-                 this.degreeInput =Math.round((this.degreeInput* 1.8) + 32);
-                 fahrenheit=true
-                 celsius=false
-                 console.log(fahrenheit)
-                 document.getElementsByClassName("dsDegree")[0].innerHTML=this.degreeInput; 
+            this.degreeInput =Math.round((this.degreeInput* 1.8) + 32);
+            fahrenheit=true
+            celsius=false
+            console.log(fahrenheit)
+            document.getElementsByClassName("dsDegree")[0].innerHTML=this.degreeInput; 
         }
     }
 }
