@@ -72,9 +72,10 @@ document.getElementsByClassName("convCelsius")[0].addEventListener("click", func
 // event listener used to convert degree values
 document.getElementsByClassName("convFahranheit")[0].addEventListener("click", function(){
     degreeInput = celcius
-    // passing the value as a parameter to class constructor
+    //giving the color to buttons
     $(".convFahranheit").css("color", "#1890f0");
     $(".convCelsius").css("color", "#000000");
+    // passing the value as a parameter to class constructor
     conversion = new weather()
     conversion.conversionToFahranheit(degreeInput);
 });
