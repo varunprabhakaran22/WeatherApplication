@@ -8,28 +8,32 @@ let fahrenheit=false
 let icon
 
 
+
+init()
+
 // url: 'https://api.openweathermap.org/data/2.5/weather?q='+cityName+'&appid=32c1955a9aeef50cf4669db5dd1cd839&units=metric',
        
-
-document.querySelector(".searchButton").addEventListener("click", function () {
-    cityName = document.querySelector(".inputBox").value;
-    $.ajax({
-        url: 'https://api.openweathermap.org/data/2.5/weather',
-        data: {q: cityName, appid: "32c1955a9aeef50cf4669db5dd1cd839", units : "metric"},
-        dataType: "json",
-        type: 'GET',
-        success: function (data) {
-            jsonFile=data
-            //calling the function
-            passingValueToHtml(jsonFile)
-            diplayProgressScreen()
-        },
-        error: function(error){
-            console.log(error);
-        }
+function init(){
+    document.querySelector(".searchButton").addEventListener("click", function () {
+        cityName = document.querySelector(".inputBox").value;
+        $.ajax({
+            url: 'https://api.openweathermap.org/data/2.5/weather',
+            data: {q: cityName, appid: "32c1955a9aeef50cf4669db5dd1cd839", units : "metric"},
+            dataType: "json",
+            type: 'GET',
+            success: function (data) {
+                jsonFile=data
+                //calling the function
+                console.log(jsonFile)
+                passingValueToHtml(jsonFile)
+                diplayProgressScreen()
+            },
+            error: function(error){
+                console.log(error);
+            }
+        });
     });
-});
-
+}
 function passingValueToHtml(){
     celcius=Math.round(jsonFile.main.temp);
     document.getElementsByClassName("dsDegree")[0].innerHTML=celcius;
