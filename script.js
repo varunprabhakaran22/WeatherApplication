@@ -56,29 +56,33 @@ function diplayProgressScreen(){
         }).ajaxStop(function(){
         $('#loading').hide();
     });
+    degreeConversion()
 }
 
- 
-// event listener used to convert degree values
-document.getElementsByClassName("convCelsius")[0].addEventListener("click", function(){
-    // passing the value as a parameter to class constructor
-    $(".convCelsius").css("color", "#1890f0");
-    $(".convFahranheit").css("color", "#000000");
-    conversion = new weather()
-    conversion.conversionToCelsius();
-});
+function degreeConversion(){ 
+    // event listener used to convert degree values
+    document.getElementsByClassName("convCelsius")[0].addEventListener("click", function(){
+        //giving the color to buttons
+        $(".convCelsius").css("color", "#1890f0");
+        $(".convFahranheit").css("color", "#000000");
+        // passing the value as a parameter to class constructor
+        conversion = new weather()
+        conversion.conversionToCelsius();
+    });
 
 
-// event listener used to convert degree values
-document.getElementsByClassName("convFahranheit")[0].addEventListener("click", function(){
-    degreeInput = celcius
-    //giving the color to buttons
-    $(".convFahranheit").css("color", "#1890f0");
-    $(".convCelsius").css("color", "#000000");
-    // passing the value as a parameter to class constructor
-    conversion = new weather()
-    conversion.conversionToFahranheit(degreeInput);
-});
+    // event listener used to convert degree values
+    document.getElementsByClassName("convFahranheit")[0].addEventListener("click", function(){
+        degreeInput = celcius
+        //giving the color to buttons
+        $(".convFahranheit").css("color", "#1890f0");
+        $(".convCelsius").css("color", "#000000");
+        // passing the value as a parameter to class constructor
+        conversion = new weather()
+        conversion.conversionToFahranheit(degreeInput);
+    });
+
+}
 
 class weather{
     constructor(degreeInput){
