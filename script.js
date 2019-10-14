@@ -79,6 +79,7 @@ class weather{
     constructor(degreeInput){
         this.degreeInput = degreeInput
     }
+    //convert to celsius
     conversionToCelsius(){
         if(!celsius){
             document.getElementsByClassName("dsDegree")[0].innerHTML=celcius;
@@ -86,6 +87,7 @@ class weather{
             fahrenheit=false
         }
     }
+    //method to convert value from celsius to fahranheit
     conversionToFahranheit(degreeInput){
         this.degreeInput = degreeInput
         if(!fahrenheit){
