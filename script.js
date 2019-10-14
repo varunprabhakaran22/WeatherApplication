@@ -62,6 +62,8 @@ function diplayProgressScreen(){
 // event listener used to convert degree values
 document.getElementsByClassName("convCelsius")[0].addEventListener("click", function(){
     // passing the value as a parameter to class constructor
+    $(".convCelsius").css("color", "#1890f0");
+    $(".convFahranheit").css("color", "#000000");
     conversion = new weather()
     conversion.conversionToCelsius();
 });
@@ -71,6 +73,8 @@ document.getElementsByClassName("convCelsius")[0].addEventListener("click", func
 document.getElementsByClassName("convFahranheit")[0].addEventListener("click", function(){
     degreeInput = celcius
     // passing the value as a parameter to class constructor
+    $(".convFahranheit").css("color", "#1890f0");
+    $(".convCelsius").css("color", "#000000");
     conversion = new weather()
     conversion.conversionToFahranheit(degreeInput);
 });
