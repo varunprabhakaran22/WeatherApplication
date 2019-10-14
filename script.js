@@ -6,6 +6,7 @@ let climate
 let celsius=true
 let fahrenheit=false
 let icon
+let conversion
 
 
 
@@ -60,9 +61,9 @@ function diplayProgressScreen(){
  
 // event listener used to convert degree values
 document.getElementsByClassName("convCelsius")[0].addEventListener("click", function(){
-    degreeInput = celcius
     // passing the value as a parameter to class constructor
-    let func=new degreeConversionCelsius(degreeInput);
+    conversion = new weather()
+    conversion.conversionToCelsius();
 });
 
 
@@ -73,17 +74,21 @@ document.getElementsByClassName("convFahranheit")[0].addEventListener("click", f
     let func=new degreeConversionFahranheit(degreeInput);
 });
 
-class degreeConversionCelsius{
+class weather{
     constructor(degreeInput){
-        this.degreeInput=degreeInput
-        if(!celsius){
-            document.getElementsByClassName("dsDegree")[0].innerHTML=celcius;
-            celsius=true
-            fahrenheit=false
+        this.degreeInput = degreeInput
+    }
+         conversionToCelsius(){
+            if(!celsius){
+                document.getElementsByClassName("dsDegree")[0].innerHTML=celcius;
+                celsius=true
+                fahrenheit=false
+            }
         }
-    }   
 }
 
+let  w= new weather()
+w.conversionToCelsius;
 
 class degreeConversionFahranheit{
     constructor(degreeInput){
@@ -103,10 +108,10 @@ function getDay(){
     let dayValue=date.getDay();
     let time = date.getHours();
     let minute=date.getMinutes();
+    let weekday = ["Sunday", "Monday","Tuesday ","Wednesday","Thursday","Friday", "Saturday" ]
     if(minute<10){
         minute='0'+minute;
-    }
-    let weekday = ["Sunday", "Monday","Tuesday ","Wednesday","Thursday","Friday", "Saturday" ]   
+    }   
     let day=weekday[dayValue]  
     document.getElementsByClassName("dtDay")[0].innerHTML=day
     document.getElementsByClassName("dtTime")[0].innerHTML=time;
