@@ -17,9 +17,6 @@ calculations like Celsius and Fahrenheit. The app is programmed in such a way th
    
    ![Degree](images/fah.png)
    
-   
-   # Author
-   
-    [VARUN](https://github.com/varunprabhakaran22)
+  
     
     
